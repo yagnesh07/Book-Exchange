@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CarouselPage from './CarouselPage';
 import { BOOKS } from '../shared/products';
 import Carousel from 'react-multi-carousel';
+import { Link } from 'react-router-dom';
 import {
   MDBRow,
   MDBCol,
@@ -52,46 +53,48 @@ const responsive = {
     const renderBooks = this.state.books.map((book) => {
       return(
         <div>
-        <MDBCard key = {book.id} cascade narrow ecommerce className = "m-4">
-          <MDBCardImage className = "product-image"
-            cascade
-            src={book.image}
-            top
-            alt={book.name}
-            overlay='white-slight'
-            zoom='true'
-          />
-        <MDBCardBody cascade className='text-center'>
-          <a href='#!' className='grey-text'>
-            <h5>{book.category}</h5>
-          </a>
-          <MDBCardTitle>
-            <strong style = {{fontSize: "16px"}}>
-              <a href='#!'>{book.name}</a>
-            </strong>
-          </MDBCardTitle>
-          {/*<MDBCardText>{book.description}</MDBCardText>*/}
-          <MDBCardFooter className='px-1'>
-            <span className='float-left font-weight-bold'>
-              <strong>{book.price}</strong>
-            </span>
-            <span className='float-right'>
-              <MDBTooltip domElement placement='top'>
-                <i className='grey-text fa fa-shopping-cart mr-3' />
-                <span>Add to Cart</span>
-              </MDBTooltip>
-              <MDBTooltip domElement placement='top'>
-                <i className='grey-text fa fa-share-alt mr-3' />
-                <span>Share</span>
-              </MDBTooltip>
-              <MDBTooltip domElement placement='top'>
-                <i className='grey-text fa fa-heart' />
-                <span>Add to Whishlist</span>
-              </MDBTooltip>
-            </span>
-          </MDBCardFooter>
-        </MDBCardBody>
-      </MDBCard>
+          <Link to = '/product'>
+            <MDBCard key = {book.id} cascade narrow ecommerce className = "m-4">
+              <MDBCardImage className = "product-image"
+                cascade
+                src={book.image}
+                top
+                alt={book.name}
+                overlay='white-slight'
+                zoom='true'
+              />
+            <MDBCardBody cascade className='text-center'>
+              <a href='#!' className='grey-text'>
+                <h5>{book.category}</h5>
+              </a>
+              <MDBCardTitle>
+                <strong style = {{fontSize: "16px"}}>
+                  <a href='#!'>{book.name}</a>
+                </strong>
+              </MDBCardTitle>
+              {/*<MDBCardText>{book.description}</MDBCardText>*/}
+              <MDBCardFooter className='px-1'>
+                <span className='float-left font-weight-bold'>
+                  <strong>{book.price}</strong>
+                </span>
+                <span className='float-right'>
+                  <MDBTooltip domElement placement='top'>
+                    <i className='grey-text fa fa-shopping-cart mr-3' />
+                    <span>Add to Cart</span>
+                  </MDBTooltip>
+                  <MDBTooltip domElement placement='top'>
+                    <i className='grey-text fa fa-share-alt mr-3' />
+                    <span>Share</span>
+                  </MDBTooltip>
+                  <MDBTooltip domElement placement='top'>
+                    <i className='grey-text fa fa-heart' />
+                    <span>Add to Whishlist</span>
+                  </MDBTooltip>
+                </span>
+              </MDBCardFooter>
+            </MDBCardBody>
+          </MDBCard>
+        </Link>
       </div>
       );
   })

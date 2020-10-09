@@ -11,7 +11,7 @@ class Main extends Component{
             <div>
                 <NavbarPage />
                 <Switch>
-                    <Route path = '/home' component = {HomePage}/>
+                    <Route exact path = '/home' component = {HomePage}/>
                     <Route exact path = '/product' component = {ProductPage} />
                     <Redirect to = '/home' />
                 </Switch>

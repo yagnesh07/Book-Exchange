@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
 MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBContainer } from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
 
 class NavbarPage extends Component {
 state = {
@@ -15,7 +14,6 @@ toggleCollapse = collapseID => () =>
 
 render() {
   return (
-    <Router>
       <MDBContainer-fluid>
         <MDBNavbar color="red" dark expand="md">
           <MDBNavbarBrand>
@@ -24,8 +22,8 @@ render() {
           <MDBNavbarToggler onClick={this.toggleCollapse("navbarCollapse3")} />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.collapseID} navbar>
             <MDBNavbarNav left>
-              <MDBNavItem active>
-                <MDBNavLink to="#!">Home</MDBNavLink>
+              <MDBNavItem>
+                <MDBNavLink to='/home'>Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
                 <MDBNavLink to="#!">Books</MDBNavLink>
@@ -59,7 +57,7 @@ render() {
           </MDBCollapse>
         </MDBNavbar>
       </MDBContainer-fluid>
-    </Router>
+
     );
   }
 }
